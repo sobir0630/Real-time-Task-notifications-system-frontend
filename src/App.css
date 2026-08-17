@@ -1,0 +1,30 @@
+/* * {
+  padding: 0;
+  margin: 0;
+  background-color: rgb(186, 171, 148);
+  justify-content: center;
+  text-align: center;
+
+}
+
+.login-card {
+  position: relative;
+  top:30vh;
+  gap: 5px;
+}
+
+#task {
+  color: rgb(60, 42, 25);
+  position: relative;
+  padding: 30px;
+}
+
+.subtitle {
+  color: red;
+  position: relative;
+  top: -10px;
+}
+
+#form-card {
+  
+} */
