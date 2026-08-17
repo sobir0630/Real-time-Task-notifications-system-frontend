@@ -345,7 +345,7 @@ function Home() {
 
         setShowAccount(false);
 
-        navigate("/login");
+        navigate("/");
     };
 
     // =========================
