@@ -483,7 +483,7 @@ function Home() {
                                                         }
                                                     </p>
 
-                                                    <small className="text-muted">
+                                                    <small className="text-muted p-2">
                                                         {new Date(
                                                             notification.created_at
                                                         ).toLocaleString()}
@@ -491,7 +491,7 @@ function Home() {
 
                                                     {!notification.is_read && (
                                                         <Link
-                                                            className="btn btn-sm btn-outline-primary mt-2"
+                                                            className="btn btn-sm btn-outline-primary mt-4"
                                                             onClick={() =>
                                                                 markAsRead(
                                                                     notification.id

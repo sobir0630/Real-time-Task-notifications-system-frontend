@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ProtectedRoute from "./components/ProtectedRoute"
 
 import Login from "./pages/login"
 import Home from "./pages/home"
@@ -12,9 +13,13 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/home" element={<Home />} />
         <Route path="/register" element={<Register />}/>
-        <Route path="/notifications" element={<Notifcations />} />
+
+          <Route element={<ProtectedRoute />}>
+              <Route path="/home" element={<Home />} />
+              <Route path="/notifications" element={<Notifcations />} />
+          </Route>
+
       </Routes>
     </BrowserRouter>
   )
