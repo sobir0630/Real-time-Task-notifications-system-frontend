@@ -47,10 +47,10 @@ function Home() {
 
     const getTasks = async () => {
         try {
-            const response = await API.get("api/tasks/", { headers });
+            const response = await API.get("/api/tasks/", { headers });
             setTasks(response.data);
         } catch (error) {
-            setError("Tasklarni yuklashda xatolik yuz berdi");
+            setError("Tasklarni yuklashda xatolik yuz berdi", `| ${error} |`);
         } finally {
             setLoading(false);
         }
@@ -63,7 +63,7 @@ function Home() {
     const getNotifications = async () => {
         try {
             const response = await API.get(
-                "api/notification/",
+                "/api/notification/",
                 { headers }
             );
 
@@ -84,7 +84,7 @@ function Home() {
             const id = localStorage.getItem("user_id");
 
             const response = await API.get(
-                `api/users/${id}/`,
+                `/api/users/${id}/`,
                 { headers }
             );
 
@@ -109,7 +109,7 @@ function Home() {
     const getUsers = async () => {
         try {
             const response = await API.get(
-                "api/users/",
+                "/api/users/",
                 { headers }
             );
 
@@ -148,7 +148,7 @@ function Home() {
 
         try {
             await API.post(
-                "api/tasks/",
+                "/api/tasks/",
                 {
                     title,
                     description,
@@ -183,7 +183,7 @@ function Home() {
     const changeStatus = async (task, status) => {
         try {
             await API.patch(
-                `api/tasks/${task.id}/`,
+                `/api/tasks/${task.id}/`,
                 { status },
                 { headers }
             );
@@ -209,7 +209,7 @@ function Home() {
 
         try {
             await API.delete(
-                `api/tasks/${id}/`,
+                `/api/tasks/${id}/`,
                 { headers }
             );
 
@@ -233,7 +233,7 @@ function Home() {
     const markAsRead = async (id) => {
         try {
             await API.patch(
-                `api/notification/${id}/read/`,
+                `/api/notification/${id}/read/`,
                 {},
                 { headers }
             );
@@ -263,7 +263,7 @@ function Home() {
             const id = localStorage.getItem("user_id");
 
             await API.patch(
-                `api/users/${id}/`,
+                `/api/users/${id}/`,
                 {
                     username: editUsername,
                 },
@@ -305,7 +305,7 @@ function Home() {
             const id = localStorage.getItem("user_id");
 
             await API.patch(
-                `api/users/${id}/`,
+                `/api/users/${id}/`,
                 {
                     email: editEmail,
                 },
