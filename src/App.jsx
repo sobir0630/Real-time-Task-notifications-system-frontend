@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ProtectedRoute from "./components/ProtectedRoute"
+// import ProtectedRoute from "./components/ProtectedRoute"
 
 import Login from "./pages/login"
 import Home from "./pages/home"
@@ -15,10 +15,10 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />}/>
 
-          <Route element={<ProtectedRoute />}>
-              <Route path="/home" element={<Home />} />
-              <Route path="/notifications" element={<Notifcations />} />
-          </Route>
+          {/* <Route element={<ProtectedRoute />}> */}
+        <Route path="/home" element={<Home />} />
+        <Route path="/notifications" element={<Notifcations />} />
+          {/* </Route> */}
 
       </Routes>
     </BrowserRouter>
