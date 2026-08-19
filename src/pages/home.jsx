@@ -64,7 +64,11 @@ function Home() {
         try {
             const response = await API.get(
                 "/api/notification/",
-                { headers }
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
             );
 
             setNotifications(response.data);
